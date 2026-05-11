@@ -60,7 +60,7 @@ public class GradeManage
         
         for(int i = 0; i < studentCount; i++){
             if(students[i].getStudId().equals(studId)){
-                
+                studentIndex = i;
             }
         }
         
@@ -68,14 +68,15 @@ public class GradeManage
         int subjectCode = sc.nextInt() - 1;
         int subjectIndex = -1;
         
-        for(int i = 0; i < subjetCount; i++){
-            if(subjects[i].getSubjectCode().equal(subjectCode){
-                
+        for(int i = 0; i < subjectCount; i++){
+            if(subjects[i].getSubjectId().equals(subjectCode)){
+                subjectIndex = i;
             }
         }
         
-        Grade grade = Grade.inputGrade(sc);
-
+        Grade grade = Grade.registerGrade(sc, students[studentIndex], subjects[subjectIndex]);
+        grades[studentIndex][subjectIndex] = grade;
+        
     }
 
     public Grade[][] getGrades()
