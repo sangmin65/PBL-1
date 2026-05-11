@@ -63,12 +63,7 @@ public class Grade
         // 여기에 코드를 작성하세요
         return totalScore;
     }
-    /**
-     * calculateTotal 메소드 - 총점을 계산해주는 메소드
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 더하기 y의 결과값을 반환
-     */
+
     public double calculateTotal()
     {
         // 여기에 코드를 작성하세요.

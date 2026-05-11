@@ -5,104 +5,87 @@ import java.util.Scanner;
  * @author (작성자 이름)
  * @version (버전 번호 또는 작성한 날짜)
  */
-public class GradeManage
-{
-    // 인스턴스 변수 - 다음의 예제를 사용자에 맞게 변경하세요.
+
+public class GradeManage {
+
     private Student[] students;
     private Subject[] subjects;
     private Grade[][] grades;
     private int studentCount;
     private int subjectCount;
 
-
-    Scanner sc = new Scanner(System.in);
-
-    /**
-     * GrandManage 클래스의 객체 생성자
-     */
-    public GradeManage()
-    {
-        // 인스턴스 변수 초기화
-
-        this.students = new Student[100];
-        this.subjects = new Subject[100];
-        this.grades = new Grade[100][100];
-        this.studentCount = 0;
-        this.subjectCount = 0;
+    public GradeManage() {
+        this.students     = new Student[100];
+        this.subjects     = new Subject[100];
+        this.grades       = new Grade[100][100];
         this.studentCount = 0;
         this.subjectCount = 0;
     }
-
-    public int getStudentCount()
-    {
-        // 여기에 코드를 작성하세요.
-        return studentCount;
+    
+    public Grade[][] getAllGrades(){
+        return grades; 
     }
     
-    public int getSubjectCount()
-    {
-        // 여기에 코드를 작성하세요.
-        return subjectCount;
-    }
-    
-    public Grade[][] getGrades()
-    {
-        // 여기에 코드를 작성하세요.
-        return grades;
-    }
-    
-    public Student[] getStudents()
-    {
-        // 여기에 코드를 작성하세요.
+    public Student[] getStudents(){
         return students;
     }
     
-    public Subject[] getSubject()
-    {
-        // 여기에 코드를 작성하세요.
+    public Subject[] getSubjects(){
         return subjects;
     }
     
-    public void addStudent(Student student)
-    {
-        // 여기에 코드를 작성하세요.
-        students[studentCount] = student;
-        studentCount++;
+    public int getStudentCount() {
+        return studentCount; 
+    }
+    
+    public int getSubjectCount() {
+        return subjectCount; 
     }
 
-    public void addSubject(Subject subject)
-    {
-        // 여기에 코드를 작성하세요.
-        subjects[subjectCount] = subject;
-        subjectCount++;
+    public void registerStudent(Scanner sc) {
+        students[studentCount++] = Student.registerStudent(sc);
+        System.out.println("  학생 등록 완료.");
     }
 
-    public void inputGrade(Scanner sc)
-    {
-        // 여기에 코드를 작성하세요.
+    public void registerSubject(Scanner sc) {
+        subjects[subjectCount++] = Subject.registerSubject(sc);
+        System.out.println("  과목 등록 완료.");
+    }
 
-        System.out.print("학생 학번 입력 : ");
-        int studId = sc.nextInt();
-        int studentIndex = -1;
-        
-        for(int i = 0; i < studentCount; i++){
-            if(students[i].getStudId().equals(studId)){
-                studentIndex = i;
+    public void registerGrade(Scanner sc) {
+        // 학번으로 학생 검색
+        int sIdx = -1;
+        while (true) {
+            System.out.print("학번 입력: ");
+            String inputId = sc.nextLine().trim();
+            for (int i = 0; i < studentCount; i++) {
+                if (students[i].getStudId().equals(inputId)) {
+                    sIdx = i;
+                    break;
+                }
+            }
+            if (sIdx != -1) break;
+            System.out.println("  등록되지 않은 학번입니다.");
+        }
+
+        // 과목 목록 출력 후 번호로 선택
+        System.out.println("[ 과목 목록 ]");
+        for (int i = 0; i < subjectCount; i++) {
+            System.out.println("  " + i + ": " + subjects[i].toString());
+        }
+        int subIdx = -1;
+        while (true) {
+            System.out.print("과목 번호 선택: ");
+            try {
+                subIdx = Integer.parseInt(sc.nextLine().trim());
+                if (subIdx >= 0 && subIdx < subjectCount) break;
+                System.out.println("  올바른 번호를 입력해주세요.");
+            } catch (NumberFormatException e) {
+                System.out.println("  숫자를 입력해주세요.");
             }
         }
-        
-        System.out.print("과목 코드 입력 : ");
-        int subjectCode = sc.nextInt() - 1;
-        int subjectIndex = -1;
-        
-        for(int i = 0; i < subjectCount; i++){
-            if(subjects[i].getSubjectCode().equals(subjectCode)){
-                subjectIndex = i;
-            }
-        }
-        
-        Grade grade = Grade.registerGrade(sc, students[studentIndex], subjects[subjectIndex]);
-        grades[studentIndex][subjectIndex] = grade;
-        System.out.println("성적 등록 완료");
+
+        grades[sIdx][subIdx] = Grade.registerGrade(sc, students[sIdx], subjects[subIdx]);
+        System.out.println("  성적 등록 완료.");
     }
 }
