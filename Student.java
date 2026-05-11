@@ -41,7 +41,7 @@ public class Student
         return name;
     }
     
-    public Student registerStudent(Scanner sc)
+    public static Student registerStudent(Scanner sc)
     {
         // 여기에 코드를 작성하세요.
         System.out.print("학번 입력 : ");

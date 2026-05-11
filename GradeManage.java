@@ -15,12 +15,12 @@ public class GradeManage
     /**
      * GrandManage 클래스의 객체 생성자
      */
-    public GrandManage()
+    public GradeManage()
     {
         // 인스턴스 변수 초기화
-        Student[] students = new Student[10];
-        Subject[] subjects = new Subject[10];
-        Grade[][] grades = new Grade[10][10];
+        this.students = new Student[10];
+        this.subjects = new Subject[10];
+        this.grades = new Grade[10][10];
     }
 
     /**
@@ -32,19 +32,25 @@ public class GradeManage
     public void registerStudent(Scanner sc)
     {
         // 여기에 코드를 작성하세요.
-        this.students = registerStudent;
+        Student student = Student.registerStudent(sc);
+        for(int i = 0; i < students.length; i++){
+            students[i] = student;
+        }
     }
     
     public void registerSubject(Scanner sc)
     {
         // 여기에 코드를 작성하세요.
-        this.subjects = registerSubject;
+        Subject subject = Subject.registerSubject(sc);
+        for(int i = 0; i < subjects.length; i++){
+            subjects[i] = subject;
+        }
     }
     
     public void registerGrade(Scanner sc)
     {
         // 여기에 코드를 작성하세요.
-        this.grades = registerGrade;
+        Grade grade = Grade.registerGrade(sc);
     }
     
     public Grade[][] getGrades()

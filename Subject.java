@@ -49,7 +49,7 @@ public class Subject
         return credit;
     }
     
-    public Subject registerSubject(Scanner sc)
+    public static Subject registerSubject(Scanner sc)
     {
         // 여기에 코드를 작성하세요.
         System.out.print("과목 아이디 입력 : ");

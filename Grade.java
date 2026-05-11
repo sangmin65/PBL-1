@@ -48,13 +48,13 @@ public class Grade
     }
     
     
-    public GrandLetter calculateLetter()
+    public GradeLetter calculateLetter()
     {
         // 여기에 코드를 작성하세요.
         return letter;
     }
     
-    public Grade registerGrade(Scanner sc)
+    public static Grade registerGrade(Scanner sc, Student student, Subject subject)
     {
         // 여기에 코드를 작성하세요.
         System.out.print("출석 점수 입력 : ");
@@ -69,7 +69,7 @@ public class Grade
         System.out.print("기말 점수 입력 : ");
         int finalExam = sc.nextInt();
         
-        Grade grade = new Grade(attendance, assignment, middleExam, finalExam);
+        Grade grade = new Grade(student, subject, attendance, middleExam, assignment, finalExam);
         
         return grade;
     }
