@@ -10,7 +10,7 @@ public class MyApp
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         
-        GrandManage manage = new GrandManage();
+        GradeManage manage = new GradeManage();
         
         manage
     }

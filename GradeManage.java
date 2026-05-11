@@ -11,6 +11,10 @@ public class GradeManage
     private Student[] students;
     private Subject[] subjects;
     private Grade[][] grades;
+    private int studentCount;
+    private int subjectCount;
+
+    Scanner sc = new Scanner(System.in);
 
     /**
      * GrandManage 클래스의 객체 생성자
@@ -21,6 +25,9 @@ public class GradeManage
         this.students = new Student[10];
         this.subjects = new Subject[10];
         this.grades = new Grade[10][10];
+
+        int studentCount = 0;
+        int subjectCount = 0;
     }
 
     /**
@@ -29,42 +36,60 @@ public class GradeManage
      * @param  y  메소드의 샘플 파라미터
      * @return    x 더하기 y의 결과값을 반환
      */
-    public void registerStudent(Scanner sc)
+    public void addStudent(Student student)
     {
         // 여기에 코드를 작성하세요.
-        Student student = Student.registerStudent(sc);
-        for(int i = 0; i < students.length; i++){
-            students[i] = student;
+        students[studentCount] = student;
+        studentCount++;
+    }
+
+    public void addSubject(Subject subject)
+    {
+        // 여기에 코드를 작성하세요.
+        subjects[subjectCount] = subject;
+        subjectCount++;
+    }
+
+    public void inputGrade(Scanner sc)
+    {
+        // 여기에 코드를 작성하세요.
+
+        System.out.print("학생 학번 입력 : ");
+        int studId = sc.nextInt();
+        int studentIndex = -1;
+        
+        for(int i = 0; i < studentCount; i++){
+            if(students[i].getStudId().equals(studId)){
+                
+            }
         }
-    }
-    
-    public void registerSubject(Scanner sc)
-    {
-        // 여기에 코드를 작성하세요.
-        Subject subject = Subject.registerSubject(sc);
-        for(int i = 0; i < subjects.length; i++){
-            subjects[i] = subject;
+        
+        System.out.print("과목 코드 입력 : ");
+        int subjectCode = sc.nextInt() - 1;
+        int subjectIndex = -1;
+        
+        for(int i = 0; i < subjetCount; i++){
+            if(subjects[i].getSubjectCode().equal(subjectCode){
+                
+            }
         }
+        
+        Grade grade = Grade.inputGrade(sc);
+
     }
-    
-    public void registerGrade(Scanner sc)
-    {
-        // 여기에 코드를 작성하세요.
-        Grade grade = Grade.registerGrade(sc);
-    }
-    
+
     public Grade[][] getGrades()
     {
         // 여기에 코드를 작성하세요.
         return grades;
     }
-    
+
     public Student[] getStudents()
     {
         // 여기에 코드를 작성하세요.
         return students;
     }
-    
+
     public Subject[] getSubject()
     {
         // 여기에 코드를 작성하세요.
