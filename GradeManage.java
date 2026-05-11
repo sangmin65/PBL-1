@@ -11,6 +11,8 @@ public class GradeManage
     private Student[] students;
     private Subject[] subjects;
     private Grade[][] grades;
+    private int studentCount;
+    private int subjectCount;
 
     /**
      * GrandManage 클래스의 객체 생성자
@@ -18,17 +20,31 @@ public class GradeManage
     public GradeManage()
     {
         // 인스턴스 변수 초기화
-        this.students = new Student[10];
-        this.subjects = new Subject[10];
-        this.grades = new Grade[10][10];
+        this.students = new Student[100];
+        this.subjects = new Subject[100];
+        this.grades = new Grade[100][100];
+        this.studentCount = 0;
+        this.subjectCount = 0;
     }
-
-    /**
-     * 예제 메소드 - 이 주석을 사용자에 맞게 바꾸십시오
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 더하기 y의 결과값을 반환
-     */
+    
+    public Grade[][] getGrades()
+    {
+        // 여기에 코드를 작성하세요.
+        return grades;
+    }
+    
+    public Student[] getStudents()
+    {
+        // 여기에 코드를 작성하세요.
+        return students;
+    }
+    
+    public Subject[] getSubject()
+    {
+        // 여기에 코드를 작성하세요.
+        return subjects;
+    }
+    
     public void registerStudent(Scanner sc)
     {
         // 여기에 코드를 작성하세요.
@@ -52,22 +68,5 @@ public class GradeManage
         // 여기에 코드를 작성하세요.
         Grade grade = Grade.registerGrade(sc);
     }
-    
-    public Grade[][] getGrades()
-    {
-        // 여기에 코드를 작성하세요.
-        return grades;
-    }
-    
-    public Student[] getStudents()
-    {
-        // 여기에 코드를 작성하세요.
-        return students;
-    }
-    
-    public Subject[] getSubject()
-    {
-        // 여기에 코드를 작성하세요.
-        return subjects;
-    }
+
 }

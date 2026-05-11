@@ -31,13 +31,11 @@ public class Student
      */
     public String getStudId()
     {
-        // 여기에 코드를 작성하세요.
         return studId;
     }
     
     public String getName()
     {
-        // 여기에 코드를 작성하세요.
         return name;
     }
     
