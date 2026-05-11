@@ -76,7 +76,7 @@ public class GradeManage
         
         Grade grade = Grade.registerGrade(sc, students[studentIndex], subjects[subjectIndex]);
         grades[studentIndex][subjectIndex] = grade;
-        
+        System.out.println("성적 등록 완료");
     }
 
     public Grade[][] getGrades()
