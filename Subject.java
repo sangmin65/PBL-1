@@ -1,6 +1,6 @@
 import java.util.Scanner;
 /**
- * Subject
+ * Subject 클래스 
  *
  * @author (작성자 이름)
  * @version (2026.05.10)
@@ -25,12 +25,6 @@ public class Subject
         this.credit = credit;
     }
 
-    /**
-     * 예제 메소드 - 이 주석을 사용자에 맞게 바꾸십시오
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 더하기 y의 결과값을 반환
-     */
     public String getSubjectCode()
     {
         // 여기에 코드를 작성하세요.
@@ -49,6 +43,12 @@ public class Subject
         return credit;
     }
     
+    /**
+     * registerSubject - 과목을 입력 받는 메소드
+     *
+     * @param  String subjectCode, String subjectName, int credit     과목 코드, 과목명, 이수학점
+     * @return    x 더하기 y의 결과값을 반환
+     */
     public static Subject registerSubject(Scanner sc)
     {
         // 여기에 코드를 작성하세요.

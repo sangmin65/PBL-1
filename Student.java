@@ -23,12 +23,6 @@ public class Student
         this.name = name;
     }
 
-    /**
-     * 예제 메소드 - 이 주석을 사용자에 맞게 바꾸십시오
-     *
-     * @param  y  메소드의 샘플 파라미터
-     * @return    x 더하기 y의 결과값을 반환
-     */
     public String getStudId()
     {
         return studId;
@@ -39,6 +33,12 @@ public class Student
         return name;
     }
     
+    /**
+     * registerStudent - 학생의 정보를 입력받는 메소드
+     *
+     * @param  String sutdId, String name   학번, 이름
+     * @return    학생의 학번과 이름.
+     */
     public static Student registerStudent(Scanner sc)
     {
         // 여기에 코드를 작성하세요.

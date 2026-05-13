@@ -7,10 +7,15 @@ import java.util.Scanner;
  */
 public class MyApp
 {
+    public static Grade[][] grades = new Grade[20000][20000];
+    public static Subject[] subjects = new Subject[20000];
+    public static Student[] students = new Student[20000];
+    private int studentCount = 0;
+    private int subjectCount = 0;
+    
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        GradeManage manage = new GradeManage();
-        while(True){
+        while(true){
             System.out.println("1. 학생 등록");
             System.out.println("2. 과목 등록");
             System.out.println("3. 성적 입력");
@@ -27,11 +32,10 @@ public class MyApp
                     Subject.registerSubject(sc);
                     break;
                 case 3:
-                    Grade.registerGrade(sc);
+                    Grade.registerGrade(sc, studId, subjectCode);
                     break;
                 case 4:
-                    GradeCalculator.calculateRelativeGrade();
-                    Print.printAllGrades();
+                    Grade.calculateRelativeGrade();
                     break;
                 case 0:
                     System.out.println("프로그램을 종료합니다.");
