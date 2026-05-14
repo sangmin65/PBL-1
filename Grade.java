@@ -215,32 +215,6 @@ public class Grade
                 letter = D_Zero;
             }
             
-            switch(ratio){
-                case (ratio <= 0.175):
-                    letter = A_Plus;
-                    break;
-                case (ratio <= 0.35):
-                    letter = A_zero;
-                    break;
-                case (ratio <= 0.525):
-                    letter = Gradeletter.B_Plus;
-                    break;
-                case (ratio <= 0.70):
-                    letter = Gradeletter.B_zero;
-                    break;
-                case (ratio <= 0.76):
-                    letter = Gradeletter.C_Plus;
-                    break;
-                case (ratio <= 0.82):
-                    letter = Gradeletter.C_zero;
-                    break;
-                case (ratio <= 0.88):
-                    letter = Gradeletter.D_Plus;
-                    break;
-                case (ratio <= 0.94):
-                    letter = Gradeletter.D_zero;
-                    break;
-            }
             }
         }
 }
