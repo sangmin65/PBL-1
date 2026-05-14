@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Subject 클래스 
  *
- * @author (작성자 이름)
+ * @author (2022320029 이상민)
  * @version (2026.05.10)
  */
 public class Subject
@@ -11,8 +11,6 @@ public class Subject
     private String subjectCode;
     private String subjectName;
     private int credit;
-    
-    Scanner sc = new Scanner(System.in);
     
     /**
      * Subject 클래스의 객체 생성자
@@ -43,6 +41,10 @@ public class Subject
         return credit;
     }
     
+    public String toString(){
+        return subjectCode + " " + subjectName + " " + credit + "학점";
+    }
+    
     /**
      * registerSubject - 과목을 입력 받는 메소드
      *
@@ -53,13 +55,13 @@ public class Subject
     {
         // 여기에 코드를 작성하세요.
         System.out.print("과목 아이디 입력 : ");
-        String subjectCode = sc.next();
+        String subjectCode = sc.nextLine();
         
         System.out.print("과목명 입력 : ");
-        String subjectName = sc.next();
+        String subjectName = sc.nextLine();
         
         System.out.print("이수 학점 입력 : ");
-        int credit = sc.nextInt();
+        int credit = Integer.parseInt(sc.nextLine());
         
         Subject subject = new Subject(subjectCode, subjectName, credit);
         
