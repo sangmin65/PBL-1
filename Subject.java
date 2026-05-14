@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Subject 클래스 
  *
- * @author (2022320029 이상민)
+ * @author (2022320029 이상민), (2023320023_이현회)
  * @version (2026.05.10)
  */
 public class Subject

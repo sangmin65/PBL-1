@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Grade 클래스의 설명을 작성하세요.
  *
- * @author (2022320029 이상민)
+ * @author (2022320029 이상민), (2023320023 이현회)
  * @version (2026.05.10)
  */
 public class Grade
