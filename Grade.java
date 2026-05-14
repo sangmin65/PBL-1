@@ -117,44 +117,46 @@ public class Grade
     /**
      * register - 등급을 계산해주는 메소드
      *
-     * @param  int studentCount, int subjectCount, Student students[], Subject subjects[]    학생 수, 과목 수, 학생 배열, 과목 배열
+     * @param  int studentCount, int subjectCount, Student students[], Subject subjects[], Grade grades[][]
+     *         학생 수, 과목 수, 학생 배열, 과목 배열, 성적 배열
      *         
      * 
      */
-    public void registerGrade(Scanner sc) {
+    public void registerGrade(Scanner sc, int studentCount, int subjectCount, 
+                              Student students[], Subject subjects[], Grade grades[][]) {
         // 학번으로 학생 검색
         int sIdx = -1;
         while (true) {
             System.out.print("학번 입력: ");
             String inputId = sc.nextLine().trim();
-            for (int i = 0; i < student[i].length; i++) {
-                if (student[i].getStudId().equals(inputId)) {
+            for (int i = 0; i < studentCount; i++) {
+                if (students[i].getStudId().equals(inputId)) {
                     sIdx = i;
                     break;
                 }
             }
-            if (studentIndex != -1) break;
+            if (sIdx != -1) break;
             System.out.println("  등록되지 않은 학번입니다.");
         }
 
         // 과목 목록 출력 후 번호로 선택
         System.out.println("[ 과목 목록 ]");
-        for (int i = 0; i < subject[i].length; i++) {
-            System.out.println("  " + i + ": " + subject[i].toString());
+        for (int i = 0; i < subjectCount; i++) {
+            System.out.println("  " + i + ": " + subjects[i].toString());
         }
         int subIdx = -1;
         while (true) {
             System.out.print("과목 번호 선택: ");
             try {
                 subIdx = Integer.parseInt(sc.nextLine().trim());
-                if (subjectIndex >= 0 && subjectIndex < subjectCount) break;
+                if (subIdx >= 0 && subIdx < subjectCount) break;
                 System.out.println("  올바른 번호를 입력해주세요.");
             } catch (NumberFormatException e) {
                 System.out.println("  숫자를 입력해주세요.");
             }
         }
 
-        grade[sIdx][subIdx] = Grade.inputGrade(sc, student[sIdx], subject[subIdx]);
+        grades [sIdx][subIdx] = Grade.inputGrade(sc, students[sIdx], subjects[subIdx]);
         System.out.println("  성적 등록 완료.");
     }
     
@@ -196,7 +198,7 @@ public class Grade
                 }
             }
             double ratio = (double)rank/count;
-
+            String letter;
             if(ratio <= 0.175){
                 letter = A_Plus;
             }else if(ratio <= 0.35){
