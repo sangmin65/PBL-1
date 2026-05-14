@@ -15,28 +15,24 @@ public class Subject
     /**
      * Subject 클래스의 객체 생성자
      */
-    public Subject(String subjectCode, String subjectName, int credit)
-    {
+    public Subject(String subjectCode, String subjectName, int credit){
         // 인스턴스 변수 초기화
         this.subjectCode = subjectCode;
         this.subjectName = subjectName;
         this.credit = credit;
     }
 
-    public String getSubjectCode()
-    {
+    public String getSubjectCode(){
         // 여기에 코드를 작성하세요.
         return subjectCode;
     }
     
-    public String getSubjectName()
-    {
+    public String getSubjectName(){
         // 여기에 코드를 작성하세요.
         return subjectName;
     }
     
-    public int getCredit()
-    {
+    public int getCredit(){
         // 여기에 코드를 작성하세요.
         return credit;
     }
@@ -51,8 +47,7 @@ public class Subject
      * @param  String subjectCode, String subjectName, int credit     과목 코드, 과목명, 이수학점
      * @return    x 더하기 y의 결과값을 반환
      */
-    public static Subject registerSubject(Scanner sc)
-    {
+    public static Subject registerSubject(Scanner sc){
         // 여기에 코드를 작성하세요.
         System.out.print("과목 아이디 입력 : ");
         String subjectCode = sc.nextLine();

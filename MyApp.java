@@ -74,6 +74,7 @@ public class MyApp
         }
         System.out.println(header);
     }
+    
     private static void printRow(int studentIndex){
         String row = String.format("%-15s %-10s", students[studentIndex].getStudId(), students[studentIndex].getName());
         

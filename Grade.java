@@ -47,45 +47,38 @@ public class Grade
         this.letter = letter;
     }
 
-    public int getMiddleExam()
-    {
+    public int getMiddleExam(){
         // 여기에 코드를 작성하세요
         return middleExam;
     }
     
-    public int getFinalExam()
-    {
+    public int getFinalExam(){
         // 여기에 코드를 작성하세요
         return finalExam;
     }
     
-    public int getAssignment()
-    {
+    public int getAssignment(){
         // 여기에 코드를 작성하세요
         return assignment;
     }
     
-    public int getAttendance()
-    {
+    public int getAttendance(){
         // 여기에 코드를 작성하세요
         return attendance;
     }
     
-    public double getTotalScore()
-    {
+    public double getTotalScore(){
         // 여기에 코드를 작성하세요
         return totalScore;
     }
 
-    public double calculateTotal()
-    {
+    public double calculateTotal(){
         // 여기에 코드를 작성하세요.
         totalScore = attendance + middleExam + assignment + finalExam;
         return totalScore;
     }
 
-    public String calculateLetter()
-    {
+    public String calculateLetter(){
         // 여기에 코드를 작성하세요.
         if(letter != null){
             return letter;   
@@ -96,14 +89,13 @@ public class Grade
     }
     
     /**
-     * registerGrade - 학생 한 과목의 성적을 입력하는 메소드
+     * inputGrade - 학생 한 과목의 성적을 입력하는 메소드
      *
      * @param  int attendace, int assigment, int middleExam, int fianlExam     출석 점수, 과제 점수, 중간 점수, 기말 점수 
      *           
      * @return 성적 반환.         
      */
-    public static Grade inputGrade(Scanner sc, Student student, Subject subject)
-    {
+    public static Grade inputGrade(Scanner sc, Student student, Subject subject){
         // 여기에 코드를 작성하세요.
         System.out.print("출석 점수 입력 : ");
         int attendance = sc.nextInt();
@@ -130,8 +122,7 @@ public class Grade
      *         
      * 
      */
-    public static void registerGrade(Scanner sc, int studentCount, int subjectCount, 
-                              Student students[], Subject subjects[], Grade grades[][]) {
+    public static void registerGrade(Scanner sc, int studentCount, int subjectCount, Student students[], Subject subjects[], Grade grades[][]) {
         int studentIndex = -1;
         while (true) {
             System.out.print("학번 입력: ");
@@ -174,9 +165,7 @@ public class Grade
      *           
      * 
      */
-    public static void calculateRelativeGrade(Grade[][] grades, Subject[] subjects, 
-    int studentCount, int subjectIndex)
-    {
+    public static void calculateRelativeGrade(Grade[][] grades, Subject[] subjects, int studentCount, int subjectIndex){
         int count = 0;
 
         for(int i = 0 ; i < studentCount; i++){

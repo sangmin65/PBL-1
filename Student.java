@@ -14,20 +14,17 @@ public class Student
     /**
      * Student 클래스의 객체 생성자
      */
-    public Student(String studId, String name)
-    {
+    public Student(String studId, String name){
         // 인스턴스 변수 초기화
         this.studId = studId;
         this.name = name;
     }
 
-    public String getStudId()
-    {
+    public String getStudId(){
         return studId;
     }
     
-    public String getName()
-    {
+    public String getName(){
         return name;
     }
     
@@ -37,8 +34,7 @@ public class Student
      * @param  String sutdId, String name   학번, 이름
      * @return    학생의 학번과 이름.
      */
-    public static Student registerStudent(Scanner sc)
-    {
+    public static Student registerStudent(Scanner sc){
         // 여기에 코드를 작성하세요.
         System.out.print("학번 입력 : ");
         String studId = sc.nextLine();
