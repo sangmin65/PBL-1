@@ -81,23 +81,23 @@ public class Grade
     }
     
     /**
-     * inputGrade - 학생 한 과목의 성적을 입력하는 메소드
+     * inputGrade - 학생 한 과목의 성적 정보를 입력하는 메소드
      *
      * @param  int attendace, int assigment, int middleExam, int fianlExam     출석 점수, 과제 점수, 중간 점수, 기말 점수 
      *           
-     * @return 성적 반환.         
+     * @return grade 객체 반환.         
      */
     public static Grade inputGrade(Scanner sc, Student student, Subject subject){
-        System.out.print("출석 점수 입력 : ");
+        System.out.print("출석 점수: ");
         int attendance = sc.nextInt();
 
-        System.out.print("과제 점수 입력 : ");
+        System.out.print("과제 점수: ");
         int assignment = sc.nextInt();
 
-        System.out.print("중간 점수 입력 : ");
+        System.out.print("중간 점수: ");
         int middleExam = sc.nextInt();
 
-        System.out.print("기말 점수 입력 : ");
+        System.out.print("기말 점수: ");
         int finalExam = sc.nextInt();
 
         Grade grade = new Grade(student, subject, attendance, middleExam, assignment, finalExam);
@@ -106,7 +106,7 @@ public class Grade
     }
     
     /**
-     * register - 등급을 계산해주는 메소드
+     * registerGrade - 한 학생의 과목에 대한 성적을 성적 배열에 등록해주는 메소드
      *
      * @param  int studentCount, int subjectCount, Student students[], Subject subjects[], Grade grades[][]
      *         학생 수, 과목 수, 학생 배열, 과목 배열, 성적 배열
@@ -153,7 +153,7 @@ public class Grade
     }
     
     /**
-     * claculateRelativeGrade - 등급을 계산해주는 메소드
+     * claculateRelativeGrade - 성정 비율을 계산해주는 메소드
      *
      * @param  Grade[][] grades, Subject[] subjects, int studentCount, int subjectIndex   성적 배열, 과목 배열, 학생 수, 과목배열 인덱스값.
      *           
