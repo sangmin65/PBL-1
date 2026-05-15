@@ -7,9 +7,9 @@ import java.util.Scanner;
  */
 public class MyApp
 {
-    public static Grade[][] grades = new Grade[20000][1000]; 
+    public static Grade[][] grades = new Grade[2000][1000]; 
     public static Subject[] subjects = new Subject[1000];
-    public static Student[] students = new Student[20000];
+    public static Student[] students = new Student[2000];
     public static int studentCount = 0;
     public static int subjectCount = 0;
     
@@ -83,7 +83,7 @@ public class MyApp
     }
     
     /**
-     * printHeader - 성적출력의 행을 출력하는 메소드
+     * printHeader - 성적표의 행을 출력하는 메소드
      */
     private static void printHeader(){
         String header = String.format("%-15s %-10s", "학번", "이름");

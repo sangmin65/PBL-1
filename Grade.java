@@ -137,16 +137,16 @@ public class Grade
      */
     public static Grade inputGrade(Scanner sc, Student student, Subject subject){
         System.out.print("출석 점수: ");
-        int attendance = sc.nextInt();
+        int attendance = Integer.parseInt(sc.nextLine());
 
         System.out.print("과제 점수: ");
-        int assignment = sc.nextInt();
+        int assignment = Integer.parseInt(sc.nextLine());
 
         System.out.print("중간 점수: ");
-        int middleExam = sc.nextInt();
+        int middleExam = Integer.parseInt(sc.nextLine());
 
         System.out.print("기말 점수: ");
-        int finalExam = sc.nextInt();
+        int finalExam = Integer.parseInt(sc.nextLine());
 
         Grade grade = new Grade(student, subject, attendance, middleExam, assignment, finalExam);
         // 입력받은 학생정보, 과목정보, 점수들로 Grade객체 생성
