@@ -46,7 +46,9 @@ public class MyApp
                     Grade.registerGrade(sc, studentCount, subjectCount, students, subjects, grades);
                     break;
                 case 4:
-                    Grade.calculateRelativeGrade(grades, subjects, studentCount, subjectCount);
+                    for(int j = 0; j < subjectCount ; j++){
+                    Grade.calculateRelativeGrade(grades, subjects, studentCount, j);
+                }
                     printAllGrades();
                     break;
                 case 0:
@@ -70,7 +72,7 @@ public class MyApp
     private static void printHeader(){
         String header = String.format("%-15s %-10s", "학번", "이름");
         for (int i = 0; i < subjectCount; i++){
-            header = header + subjects[i].getSubjectName() + " ";
+            header = header + String.format("%-15s", subjects[i].getSubjectName());
         }
         System.out.println(header);
     }

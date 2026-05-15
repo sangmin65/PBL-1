@@ -114,31 +114,34 @@ public class Grade
      * 
      */
     public static void registerGrade(Scanner sc, int studentCount, int subjectCount, Student students[], Subject subjects[], Grade grades[][]) {
+        System.out.println("[ 학생 목록 ]");
+        for (int i = 0; i < studentCount; i++){
+            System.out.println(" " + i + ": " + students[i].getStudents());
+        }
         int studentIndex = -1;
         while (true) {
-            System.out.print("학번 입력: ");
-            String inputId = sc.nextLine().trim();
-            for (int i = 0; i < studentCount; i++) {
-                if (students[i].getStudId().equals(inputId)) {
-                    studentIndex = i;
-                    break;
-                }
+            System.out.print("학생 번호 선택: ");
+            try {
+                studentIndex = Integer.parseInt(sc.nextLine().trim());
+                if (studentIndex >= 0 && studentIndex < studentCount) 
+                break;
+                System.out.println("올바른 번호를 입력해주세요.");
+            } catch (NumberFormatException e) {
+                System.out.println("숫자를 입력해주세요.");
             }
-            if (studentIndex != -1)
-            break;
-            System.out.println("등록되지 않은 학번입니다.");
         }
 
         System.out.println("[ 과목 목록 ]");
         for (int i = 0; i < subjectCount; i++) {
-            System.out.println("  " + i + ": " + subjects[i].toString());
+            System.out.println("  " + i + ": " + subjects[i].getSubjects());
         }
         int subjectIndex = -1;
         while (true) {
             System.out.print("과목 번호 선택: ");
             try {
                 subjectIndex = Integer.parseInt(sc.nextLine().trim());
-                if (subjectIndex >= 0 && subjectIndex < subjectCount) break;
+                if (subjectIndex >= 0 && subjectIndex < subjectCount) 
+                break;
                 System.out.println("올바른 번호를 입력해주세요.");
             } catch (NumberFormatException e) {
                 System.out.println("숫자를 입력해주세요.");
