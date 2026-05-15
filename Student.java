@@ -26,6 +26,9 @@ public class Student
         return name;
     }
     
+    public String getStudents(){
+        return studId + " " + name;    
+    }
     /**
      * registerStudent - 학생의 정보를 입력받는 메소드
      *

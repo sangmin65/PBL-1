@@ -32,7 +32,7 @@ public class Subject
         return credit;
     }
     
-    public String toString(){
+    public String getSubjects(){
         return subjectCode + " " + subjectName + " " + credit + "학점";
     }
     
