@@ -7,8 +7,8 @@ import java.util.Scanner;
  */
 public class MyApp
 {
-    public static Grade[][] grades = new Grade[20000][20000];
-    public static Subject[] subjects = new Subject[20000];
+    public static Grade[][] grades = new Grade[20000][1000];
+    public static Subject[] subjects = new Subject[1000];
     public static Student[] students = new Student[20000];
     public static int studentCount = 0;
     public static int subjectCount = 0;
