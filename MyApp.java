@@ -46,7 +46,7 @@ public class MyApp
                     Grade.registerGrade(sc, studentCount, subjectCount, students, subjects, grades);
                     break;
                 case 4:
-                    Grade.calculateRelativeGrade(grades, subjects,studentCount, subjectCount);
+                    Grade.calculateRelativeGrade(grades, subjects, studentCount, subjectCount);
                     printAllGrades();
                     break;
                 case 0:
