@@ -3,11 +3,10 @@ import java.util.Scanner;
  * Grade 클래스의 설명을 작성하세요.
  *
  * @author (2022320029_이상민), (2023320023_이현회), (2023320035_윤효준)
- * @version (2026.05.10)
+ * @version (2026.05.14)
  */
 public class Grade
 {
-    // 인스턴스 변수 - 다음의 예제를 사용자에 맞게 변경하세요.
     public static final String A_Plus = "A+";
     public static final String A_Zero = "A0";
     public static final String B_Plus = "B+";
@@ -32,7 +31,6 @@ public class Grade
     public Grade(Student student, Subject subject, int attendance, int middleExam, 
     int assignment, int finalExam)
     {
-        // 인스턴스 변수 초기화
         this.student = student;
         this.subject = subject;
         this.attendance = attendance;
@@ -48,38 +46,32 @@ public class Grade
     }
 
     public int getMiddleExam(){
-        // 여기에 코드를 작성하세요
         return middleExam;
     }
     
     public int getFinalExam(){
-        // 여기에 코드를 작성하세요
         return finalExam;
     }
     
     public int getAssignment(){
-        // 여기에 코드를 작성하세요
         return assignment;
     }
     
     public int getAttendance(){
-        // 여기에 코드를 작성하세요
         return attendance;
     }
     
     public double getTotalScore(){
-        // 여기에 코드를 작성하세요
         return totalScore;
     }
 
     public double calculateTotal(){
-        // 여기에 코드를 작성하세요.
         totalScore = attendance + middleExam + assignment + finalExam;
         return totalScore;
     }
 
     public String calculateLetter(){
-        // 여기에 코드를 작성하세요.
+
         if(letter != null){
             return letter;   
         }
@@ -96,7 +88,6 @@ public class Grade
      * @return 성적 반환.         
      */
     public static Grade inputGrade(Scanner sc, Student student, Subject subject){
-        // 여기에 코드를 작성하세요.
         System.out.print("출석 점수 입력 : ");
         int attendance = sc.nextInt();
 

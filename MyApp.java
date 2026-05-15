@@ -1,9 +1,9 @@
 import java.util.Scanner;
 /**
- * MyApp 클래스의 설명을 작성하세요.
+ * MyApp
  *
  * @author (2022320029_이상민), (2023320023_이현회), (2023320035_윤효준)
- * @version (2026.05.11)
+ * @version (2026.05.14)
  */
 public class MyApp
 {
