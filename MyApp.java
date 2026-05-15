@@ -13,6 +13,9 @@ public class MyApp
     public static int studentCount = 0;
     public static int subjectCount = 0;
     
+    /**
+     * main - 성적 처리 프로그램을 실행하는 메소드    
+     */
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int menu = -1;
@@ -68,6 +71,9 @@ public class MyApp
         sc.close();
     }
     
+    /**
+     * printAllGrades - 모든 학생의 성적을 출력하는 메소드
+     */
     private static void printAllGrades(){
         printHeader();
         for(int i = 0; i < studentCount; i++){
@@ -76,6 +82,9 @@ public class MyApp
         }
     }
     
+    /**
+     * printHeader - 성적출력의 행을 출력하는 메소드
+     */
     private static void printHeader(){
         String header = String.format("%-15s %-10s", "학번", "이름");
         for (int i = 0; i < subjectCount; i++){
@@ -85,6 +94,11 @@ public class MyApp
         System.out.println(header);
     }
     
+    /**
+     * printRow - 학생의 정보와 성적을 출력하는 메소드
+     * 
+     * @param studentIndex 학생의 인덱스
+     */
     private static void printRow(int studentIndex){
         String row = String.format("%-15s %-10s", students[studentIndex].getStudId(), students[studentIndex].getName());
         // row에 학생 정보 저장

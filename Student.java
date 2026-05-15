@@ -17,20 +17,35 @@ public class Student
         this.studId = studId;
         this.name = name;
     }
-
+    
+    /**
+     * getStudId - 학생의 학번을 반환하는 메소드
+     * 
+     * @return studId 학생 학번
+     */
     public String getStudId(){
         return studId;
         // 학생 학번 반환
     }
     
+    /**
+     * getName - 학생의 이름을 반환하는 메소드
+     * 
+     * @return name 학생 이름
+     */
     public String getName(){
         return name;
         //학생 이름 반환
     }
     
+    /**
+     * getStudents - 학생과 이름을 반환하는 메소드
+     * 
+     * @return studId + " " + name 학번과 이름
+     */
     public String getStudents(){
         return studId + " " + name; 
-        // 학생과 이름을 하나로 뭉쳐 반환
+        // 학번과 이름을 하나로 뭉쳐 반환
     }
     /**
      * registerStudent - 학생의 정보를 입력받는 메소드

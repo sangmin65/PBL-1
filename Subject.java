@@ -20,21 +20,41 @@ public class Subject
         this.credit = credit;
     }
 
+    /**
+     * getSubjectCode - 과목 코드를 반환하는 메소드
+     * 
+     * @return subjectCode 과목 코드
+     */
     public String getSubjectCode(){
         return subjectCode;
         // 과목 코드 반환
     }
     
+    /**
+     * getSubjectName - 과목명을 반환하는 메소드
+     * 
+     * @return subjectName 과목명
+     */
     public String getSubjectName(){
         return subjectName;
         // 과목명 반환
     }
     
+    /**
+     * getCredit 이수 학점을 반환하는 메소드
+     * 
+     * @return credit 이수 학점
+     */
     public int getCredit(){
         return credit;
-        // 이수학점 반환
+        // 이수 학점 반환
     }
     
+    /**
+     * getSubjects 과목 코드, 과목명, 이수학점을 반환하는 메소드
+     * 
+     * @return subjectCode + " " + subjectName + " " + credit + "학점"  과목 코드, 과목명, 이수학점
+     */
     public String getSubjects(){
         return subjectCode + " " + subjectName + " " + credit + "학점";
         // 과목 코드, 과목명, 이수학점을 한번에 뭉쳐 반환

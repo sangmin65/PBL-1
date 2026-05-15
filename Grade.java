@@ -41,42 +41,82 @@ public class Grade
         this.letter = null;
     }
     
+    /**
+     * setLetter - 등급을 반환하는 메소드
+     * 
+     * @return letter 등급
+     */
     public void setLetter(String letter){
         this.letter = letter;
         // 등급 반환
     }
-
+    
+    /**
+     * getMiddleExam - 중간고사 점수를 반환하는 메소드
+     * 
+     * @return middleExam 중간고사 점수
+     */
     public int getMiddleExam(){
         return middleExam;
         // 중간고사 점수 반환
     }
     
+    /**
+     * getFinnalExam - 기말고사 점수를 반환하는 메소드
+     * 
+     * @return finalExam 기말고사 점수
+     */
     public int getFinalExam(){
         return finalExam;
         // 기말고사 점수 반환
     }
     
+    /**
+     * getAssignment - 과제 점수를 반환하는 메소드
+     * 
+     * @return assignment 과제 점수
+     */
     public int getAssignment(){
         return assignment;
         // 과제 점수 반환
     }
     
+    /**
+     * getAttendance - 출석 점수를 반환하는 메소드
+     * 
+     * @return attendance 출석 점수
+     */
     public int getAttendance(){
         return attendance;
         // 출석 점수 반환
     }
     
+    /**
+     * getTotalScore - 총점을 반환하는 메소드
+     * 
+     * @return totalScore 총점
+     */
     public double getTotalScore(){
         return totalScore;
         // 총점 반환
     }
 
+    /**
+     * calculateTotal - 출석, 중간고사, 과제, 기말고사를 합산하여 계산 후 총점을 반환하는 메소드
+     * 
+     * @return totalScore 총점
+     */
     public double calculateTotal(){
         totalScore = attendance + middleExam + assignment + finalExam;
         // 총점을 계산 후 반환
         return totalScore;
     }
-
+    
+    /**
+     * calculateLetter - 계산된 성적의 등급을 반환하는 메소드
+     * 
+     * @return letter 등급, "미산출"
+     */
     public String calculateLetter(){
 
         if(letter != null){
@@ -85,7 +125,7 @@ public class Grade
         else{
             return "미산출";
         }
-        // 등급이 계산되어 있다면 그 등급을 반환하고 아니라면 "미산출"을 반환
+        // 성적의 등급이 계산되어 있다면 그 등급을 반환하고 아니라면 "미산출"을 반환
     }
     
     /**
