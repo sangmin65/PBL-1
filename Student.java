@@ -7,8 +7,8 @@ import java.util.Scanner;
  */
 public class Student
 {
-    private String studId;
-    private String name;
+    private String studId; //학생 학번
+    private String name; // 학생 이름
     
     /**
      * Student 클래스의 객체 생성자
@@ -20,14 +20,17 @@ public class Student
 
     public String getStudId(){
         return studId;
+        // 학생 학번 반환
     }
     
     public String getName(){
         return name;
+        //학생 이름 반환
     }
     
     public String getStudents(){
-        return studId + " " + name;    
+        return studId + " " + name; 
+        // 학생과 이름을 하나로 뭉쳐 반환
     }
     /**
      * registerStudent - 학생의 정보를 입력받는 메소드
@@ -43,6 +46,7 @@ public class Student
         String name = sc.nextLine();
         
         Student student = new Student(studId, name);
+        // 학번과 이름으로 student객체 생성
         
         return student;
     }

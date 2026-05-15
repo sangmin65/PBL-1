@@ -7,9 +7,9 @@ import java.util.Scanner;
  */
 public class Subject
 {
-    private String subjectCode;
-    private String subjectName;
-    private int credit;
+    private String subjectCode; // 과목 코드
+    private String subjectName; // 과목명
+    private int credit; // 이수 학점
     
     /**
      * Subject 클래스의 객체 생성자
@@ -22,18 +22,22 @@ public class Subject
 
     public String getSubjectCode(){
         return subjectCode;
+        // 과목 코드 반환
     }
     
     public String getSubjectName(){
         return subjectName;
+        // 과목명 반환
     }
     
     public int getCredit(){
         return credit;
+        // 이수학점 반환
     }
     
     public String getSubjects(){
         return subjectCode + " " + subjectName + " " + credit + "학점";
+        // 과목 코드, 과목명, 이수학점을 한번에 뭉쳐 반환
     }
     
     /**
@@ -53,6 +57,7 @@ public class Subject
         int credit = Integer.parseInt(sc.nextLine());
         
         Subject subject = new Subject(subjectCode, subjectName, credit);
+        // 과목 코드, 과목명, 이수학점으로 subject 객체 생성
         
         return subject;
     }
