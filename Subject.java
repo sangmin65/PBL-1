@@ -2,7 +2,7 @@ import java.util.Scanner;
 /**
  * Subject 클래스 
  *
- * @author (2022320029_이상민), (2023320023_이현회), (2023320035_윤효준)
+ * @author (2022320029_이상민), (2023320023_이현회), (2023320035_윤효준), (2025320062_이진혁)
  * @version (2026.05.14)
  */
 public class Subject
@@ -37,10 +37,10 @@ public class Subject
     }
     
     /**
-     * registerSubject - 과목을 입력 받는 메소드
+     * registerSubject - 과목 정보를 입력 받는 메소드
      *
      * @param  String subjectCode, String subjectName, int credit     과목 코드, 과목명, 이수학점
-     * @return    x 더하기 y의 결과값을 반환
+     * @return subject 객체
      */
     public static Subject registerSubject(Scanner sc){
         System.out.print("과목 아이디 입력 : ");
